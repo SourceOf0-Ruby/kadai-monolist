@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  # ログイン時のみ表示するページを指定
+  before_action :require_user_logged_in, only: [:show];
+  
   
   def show
     @user = User.find(params[:id]);
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
     
     if @user.save
       # ユーザ作成と同時にログイン状態にする
-      # session[:user_id] = @user.id;
+      session[:user_id] = @user.id;
       
       flash[:success] = 'ユーザを登録しました。';
       redirect_to @user;
