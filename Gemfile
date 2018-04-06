@@ -51,3 +51,23 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# Add---------
+
+# Debug tool
+gem 'pry-byebug', group: :development
+
+# Paginator
+#gem 'kaminari'
+
+# Rakuten SDK
+gem 'rakuten_web_service' , '1.5.0'
+
+# load environment variables from `.env`
+gem 'dotenv-rails'
+
+# for heroku
+group :production do
+  #gem 'pg', '0.21.0'
+end
