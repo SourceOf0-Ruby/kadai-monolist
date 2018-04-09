@@ -11,7 +11,19 @@
               <img src="<%= item.image_url %>" alt="">
             </div>
             <div class="panel-body">
-              <p class="item-title"><%= item.name %></p>
+              <p class="item-title">
+                <% if item.persisted? %>
+                  <%= link_to item.name, item  %>
+                <% else %>
+                  <%= item.name %>
+                <% end %>
+              </p>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                  <%= render 'ownerships/want_button', item: item %>
+                  <%= render 'ownerships/have_button', item: item %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

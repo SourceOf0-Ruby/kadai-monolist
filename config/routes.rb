@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create];
   
   # 商品周り
-  resources :items, only: [:new];
-  
+  resources :items, only: [:show, :new];
+  resources :ownerships, only: [:create, :destroy];
+
 end

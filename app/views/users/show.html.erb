@@ -1,9 +1,31 @@
 
 <div class="user-profile">
+  
   <div class="icon text-center">
     <img class="image-circle" src="<%= gravatar_url(@user, size: 100) %>" alt="<%= @user.name %> icon">
   </div>
+  
   <div class="name text-center">
     <h1><%= @user.name %></h1>
   </div>
+  
+  <div class="status text-center">
+    <ul>
+      <li>
+        <div class="status-label">Want</div>
+        <div id="want_count" class="status-value">
+          <%= @count_want %>
+        </div>
+      </li>
+      <li>
+        <div class="status-label">Have</div>
+        <div id="have_count" class="status-value">
+          <%= @count_have %>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
 </div>
+
+<%= render 'items/items', items: @items %>

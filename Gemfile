@@ -69,5 +69,5 @@ gem 'dotenv-rails'
 
 # for heroku
 group :production do
-  #gem 'pg', '0.21.0'
+  gem 'pg', '0.21.0'
 end
