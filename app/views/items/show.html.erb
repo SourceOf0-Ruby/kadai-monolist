@@ -10,8 +10,8 @@
           <p class="item-title"><%= @item.name %></p>
           <div class="buttons text-center">
             <% if logged_in? %>
-              <% render 'ownerships/want_button', item: @item %>
-              <% render 'ownerships/have_button', item: @item %>
+              <%= render 'ownerships/want_button', item: @item %>
+              <%= render 'ownerships/have_button', item: @item %>
             <% end %>
           </div>
         </div>
