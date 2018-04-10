@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   # ランキング
   get 'rankings/want', to: 'rankings#want';
+  get 'rankings/have', to: 'rankings#have';
   
 end
