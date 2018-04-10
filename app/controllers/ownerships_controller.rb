@@ -1,5 +1,8 @@
 class OwnershipsController < ApplicationController
   
+  # ログイン時のみ
+  before_action :require_user_logged_in;
+  
   def create
     # 見つかれば取得、見つからなければnew
     @item = Item.find_or_initialize_by(code: params[:item_code]);

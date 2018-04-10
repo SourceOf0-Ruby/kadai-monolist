@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   
-  # ログイン時のみ表示するページを指定
+  # ログイン時のみ
   before_action :require_user_logged_in;
   
   def new
